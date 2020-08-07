@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Atanna Magical Library</title>{% endblock %}
+{% block content %}
+  <h1>Atanna Magical Library</h1>
+  <p>Welcome to the Atanna Magical Library, where the only thing you can do is doing nothing :) <em> :) :) :)</em></p>
+  <h2>There is the content of this page</h2>
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><strong>Genres:</strong> {{ num_genres }}</li>
+    <li><strong>List book:</strong> {{ book_all }}</li>
+  </ul>
+{% endblock %}
