@@ -1,7 +1,6 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-
     {% if perms.catalog.can_mark_returned %}
         <h1>Borrowed books from all users</h1>
         {% if bookinstance_list %}
@@ -12,7 +11,6 @@
                 </li>
             {% endfor %}
             </ul>
-
         {% else %}
             <p>There are no books borrowed.</p>
         {% endif %}
