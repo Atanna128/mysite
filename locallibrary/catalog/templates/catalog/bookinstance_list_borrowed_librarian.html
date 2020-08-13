@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    {% if perms.catalog.can_mark_returned %}
+        <h1>Borrowed books from all users</h1>
+        {% if bookinstance_list %}
+            <ul>
+            {% for bookinst in bookinstance_list %}
+                <li class="{% if bookinst.is_overdue %}text-danger{% endif %}">
+                    <a href="{% url 'book-detail' bookinst.book.pk %}">{{bookinst.book.title}}</a> ({{ bookinst.due_back }})
+                </li>
+            {% endfor %}
+            </ul>
+
+        {% else %}
+            <p>There are no books borrowed.</p>
+        {% endif %}
+    {% else %}
+        <h1>No permission</h1>
+    {% endif %}
+{% endblock %}
